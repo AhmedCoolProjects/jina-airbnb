@@ -1,0 +1,22 @@
+.toolbarc_toolbar {
+  background-color: white;
+  height: 80px;
+}
+.toolbarc_search_input_div {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.toolbarc_profile_paper {
+  border-radius: 50px !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  position: relative;
+  padding: 0 0 0 8px;
+}
