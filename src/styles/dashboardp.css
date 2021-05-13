@@ -1,0 +1,31 @@
+.dashboard_title_part {
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+.becomehost_title {
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.card_subtitle {
+  font-size: 1rem;
+  color: grey;
+}
+.becomehost_subtitle {
+  font-size: 1.4rem;
+  color: white;
+  margin-left: 8px;
+}
+.footerinfo_links {
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 2rem;
+}
+.footerinfo_links:hover {
+  text-decoration: underline;
+}

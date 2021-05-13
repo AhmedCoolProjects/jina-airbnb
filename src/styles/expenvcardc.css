@@ -1,0 +1,9 @@
+.card_title {
+  font-size: 1rem;
+  color: black;
+}
+.card_subtitle {
+  font-size: 1rem;
+  color: gray;
+  margin-top: 4px;
+}

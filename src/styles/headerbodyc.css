@@ -1,0 +1,12 @@
+.headerbodyc_all {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/bg2.jpg");
+  background-size: cover;
+  background-position: center;
+}

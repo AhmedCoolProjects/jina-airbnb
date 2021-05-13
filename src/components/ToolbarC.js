@@ -16,8 +16,6 @@ import {
   Search,
   Menu as MenuIcon,
   Language,
-  Mail,
-  Notifications,
   MoreVert,
 } from "@material-ui/icons";
 import logo from "../assets/logo.svg";
@@ -30,6 +28,13 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: 8,
     },
   },
+  menu_item: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 16,
+  },
   search_input_paper: {
     display: "flex",
     flexDirection: "row",
@@ -38,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 50,
     padding: " 0 0 0 24px",
     width: 350,
+    cursor: "pointer",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
@@ -99,8 +105,8 @@ export default function ToolbarC() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}>
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
     </Menu>
   );
 
@@ -114,21 +120,24 @@ export default function ToolbarC() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit">
-          <AccountCircle />
-        </IconButton>
+      <MenuItem className={classes.menu_item}>
+        <p>Become a Host</p>
+      </MenuItem>
+      <MenuItem className={classes.menu_item}>
+        <p>Language</p>
+        <Language style={{ color: "#000" }} />
+      </MenuItem>
+      <MenuItem className={classes.menu_item} onClick={handleProfileMenuOpen}>
         <p>Profile</p>
+        <Badge badgeContent={4} color="secondary">
+          <AccountCircle />
+        </Badge>
       </MenuItem>
     </Menu>
   );
 
   return (
-    <div>
+    <div style={{ position: "sticky", top: 0, zIndex: 1 }}>
       <AppBar position="sticky">
         <Toolbar className="toolbarc_toolbar">
           <IconButton className={classes.logo}>
@@ -143,7 +152,9 @@ export default function ToolbarC() {
           </Typography>
           {/* search input */}
           <div className="toolbarc_search_input_div">
-            <Paper className={classes.search_input_paper}>
+            <Paper
+              onClick={() => alert("thanks GOD")}
+              className={classes.search_input_paper}>
               <p>Start your search</p>
               <IconButton
                 style={{ backgroundColor: "red", margin: 8, padding: 4 }}>
