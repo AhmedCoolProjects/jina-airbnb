@@ -139,7 +139,7 @@ export default function ToolbarC() {
   );
 
   return (
-    <div style={{ position: "sticky", top: 0, zIndex: 1 }}>
+    <div style={{ position: "sticky", top: 0, zIndex: 1000 }}>
       <AppBar position="sticky">
         <Toolbar className="toolbarc_toolbar">
           <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>

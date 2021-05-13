@@ -6,6 +6,7 @@ import dataSpain from "../backend/data/dataSpain.json";
 import dataSeattle from "../backend/data/dataUs.json";
 import dataBoston from "../backend/data/dataUs2.json";
 import "../styles/searchp.css";
+import BMapC from "../components/BMapC";
 
 const allData = [
   {
@@ -24,14 +25,14 @@ const allData = [
     data: dataBoston,
   },
 ];
-// const useStyles = makeStyles((theme) => ({
-//   allgrid: {
-//     display: "flex",
-//     flexDirection: "row",
-//     [theme.breakpoints.down("sm")]: {},
-//   },
-// }));
-
+const loca = [
+  {
+    latitude: dataSpain[0].latitude,
+    longitude: dataSpain[0].longitude,
+    room_type: dataSpain[0].room_type,
+    price: dataSpain[0].price,
+  },
+];
 function SearchP() {
   return (
     <Grid container spacing={0}>
@@ -65,11 +66,18 @@ function SearchP() {
         ))}
       </Grid>
       <Grid
-        style={{ backgroundColor: "red", height: "calc(100vh - 80px)" }}
+        style={{
+          backgroundColor: "#ddd",
+          height: "calc(100vh - 80px)",
+          overflow: "hidden",
+          position: "relative",
+        }}
         item
         xs={12}
         sm={12}
-        md={5}></Grid>
+        md={5}>
+        <BMapC infosHost={dataSpain} />
+      </Grid>
     </Grid>
   );
 }
