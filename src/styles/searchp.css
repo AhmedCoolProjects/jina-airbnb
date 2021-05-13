@@ -1,0 +1,9 @@
+.searchp_left {
+  padding: 0 16px;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.searchp_left::-webkit-scrollbar {
+  display: none;
+}

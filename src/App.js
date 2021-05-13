@@ -4,6 +4,7 @@ import CopyrightC from "./components/CopyrightC";
 import FooterInfoC from "./components/FooterInfoC";
 import ToolbarC from "./components/ToolbarC";
 import DashboardP from "./pages/DashboardP";
+import HostItemP from "./pages/HostItemP";
 import SearchP from "./pages/SearchP";
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route exact path="/search">
           <SearchP />
+        </Route>
+        <Route exact path="/hostitem">
+          <HostItemP />
         </Route>
       </Switch>
       <FooterInfoC />
