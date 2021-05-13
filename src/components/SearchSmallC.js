@@ -5,7 +5,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import React from "react";
-import { FavoriteBorder, Favorite } from "@material-ui/icons";
+import { FavoriteBorder, OpenInNew } from "@material-ui/icons";
 import "../styles/searchcard.css";
 
 function SearchSmallC({ host }) {
@@ -22,56 +22,70 @@ function SearchSmallC({ host }) {
       <img
         style={{
           width: "100%",
-          objectFit: "contain",
+          height: 200,
+          objectFit: "cover",
           borderRadius: "inherit",
         }}
         src={host.picture_url}
         alt={host.name}
       />
+      <IconButton
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+        }}>
+        <FavoriteBorder />
+      </IconButton>
+      <IconButton
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}>
+        <OpenInNew />
+      </IconButton>
       {/* bottom */}
       <CardContent
         style={{
-          flex: 1,
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap",
+          width: "100%",
           display: "flex",
+          padding: 8,
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "space-between",
+          position: "relative",
+          height: 170,
         }}>
         {/* top */}
-        <div className="search_card_right_top_v">
-          <div className="search_card_right_top_text_v">
-            <p className="search_card_right_top_text_desc_v">
-              {host.room_type} in {host.city}
-            </p>
-            <p className="search_card_right_top_text_title_v">{host.name}</p>
-            <Divider
-              style={{ color: "gray", width: 32, height: 2, marginTop: 16 }}
-            />
-          </div>
-          <IconButton>
-            <FavoriteBorder />
-          </IconButton>
+        <div className="search_card_right_top_text_v">
+          <p>
+            {host.room_type} in {host.city}
+          </p>
+          <strong>{host.name}</strong>
+          <Divider
+            style={{
+              color: "gray",
+              width: 32,
+              height: 2,
+              marginTop: 12,
+              marginBottom: 8,
+            }}
+          />
+          {/* rates */}
+          <small>
+            <strong>⭐{host.review_scores_rating / 20}</strong> (
+            {host.number_of_reviews} reviews)
+          </small>
         </div>
-
         {/* body */}
-        <div className="search_card_right_body_v">
-          <div className="search_card_right_body_top_v">
-            {/* location */}
-            <p>
-              {host.street}-{host.city}-{host.country}
-            </p>
+        <div className="search_card_right_body_bottom_v">
+          <div>
+            <small>minimum nights {host.minimum_nights}</small>
+            <br />
+            <small>maximum nights {host.maximum_nights}</small>
           </div>
-          <div className="search_card_right_body_bottom_v">
-            {/* rates */}
-            <p>5.5 ({host.number_of_reviews} reviews)</p>
-            {/* price per night */}
-            <p>{host.price * 9.5} MAD/night</p>
-            <p>minimum nights {host.minimum_nights}</p>
-            <p>maximum nights {host.maximum_nights}</p>
-          </div>
+          <strong>{host.price * 9.5} MAD/night</strong>
         </div>
       </CardContent>
     </CardActionArea>
