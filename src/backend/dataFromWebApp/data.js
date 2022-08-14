@@ -148,3 +148,4 @@ export const experiencesdata = [
     subtitle: "Travel from home with Online Experiences.",
   },
 ];
+export const toMAD = 9.5;

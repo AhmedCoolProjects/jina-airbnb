@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Menu,
@@ -11,6 +12,7 @@ import {
   Badge,
   MenuItem,
 } from "@material-ui/core";
+
 import {
   AccountCircle,
   Search,
@@ -137,16 +139,18 @@ export default function ToolbarC() {
   );
 
   return (
-    <div style={{ position: "sticky", top: 0, zIndex: 1 }}>
+    <div style={{ position: "sticky", top: 0, zIndex: 1000 }}>
       <AppBar position="sticky">
         <Toolbar className="toolbarc_toolbar">
-          <IconButton className={classes.logo}>
-            <img
-              src={logo}
-              alt="this_is"
-              style={{ width: "1.3em", height: "1.3em" }}
-            />
-          </IconButton>
+          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+            <IconButton className={classes.logo}>
+              <img
+                src={logo}
+                alt="this_is"
+                style={{ width: "1.3em", height: "1.3em" }}
+              />
+            </IconButton>
+          </Link>
           <Typography className={classes.title} variant="h6" noWrap>
             Jina Airbnb
           </Typography>

@@ -11,7 +11,9 @@
 # production
 /build
 
+
 # misc
+
 .DS_Store
 .env.local
 .env.development.local
@@ -23,3 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock
 public/favicon.ico
+src/backend/hideData
